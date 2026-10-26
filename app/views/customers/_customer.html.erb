@@ -1,0 +1,22 @@
+<div class="column is-3">
+  <div class="box" style="height: 100%;">
+    <h2 class="title is-4"><%= customer.full_name %></h2>
+
+    <figure class="has-text-centered mb-4">
+      <% if customer.image.attached? %>
+        <%= image_tag customer.image, alt: customer.full_name,
+              style: "width: 200px; height: 265px; object-fit: cover;" %>
+      <% else %>
+        <%= image_tag "https://placehold.co/200x265?text=No+Image", alt: "Sin imagen" %>
+      <% end %>
+    </figure>
+
+    <p class="mb-5"><strong>Province:</strong> <%= customer.province.presence || "Unknown" %></p>
+
+    <p class="mb-5"><%= customer.phone_number %></p>
+
+    <% if customer.email_address.present? %>
+      <p><%= customer.email_address %></p>
+    <% end %>
+  </div>
+</div>

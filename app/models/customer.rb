@@ -7,7 +7,7 @@ class Customer < ApplicationRecord
 
   # Ransack 4 (usado por ActiveAdmin) exige esto para los filtros
   def self.ransackable_attributes(auth_object = nil)
-    %w[full_name phone_number email_address notes created_at]
+    %w[full_name phone_number email_address notes province created_at]
   end
 
   def self.ransackable_associations(auth_object = nil)

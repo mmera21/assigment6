@@ -1,5 +1,5 @@
 ActiveAdmin.register Customer do
-  permit_params :full_name, :phone_number, :email_address, :notes, :image
+    permit_params :full_name, :phone_number, :email_address, :notes, :image, :province
 
   filter :full_name
   filter :phone_number
@@ -11,13 +11,16 @@ ActiveAdmin.register Customer do
     column :full_name
     column :phone_number
     column :email_address
+    column :province
     actions
   end
+  
 
   form do |f|
     f.semantic_errors
     f.inputs do
       f.input :full_name
+      f.input :province
       f.input :phone_number
       f.input :email_address
       f.input :notes
